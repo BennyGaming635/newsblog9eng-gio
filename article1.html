@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Is AI Here to Stay?</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+  <a href="index.html">← Back</a>
+  <h1>Is AI Here to Stay?</h1>
+</header>
+
+<div class="controls">
+  <button onclick="changeTextSize(1)">A+</button>
+  <button onclick="changeTextSize(-1)">A-</button>
+</div>
+
+<main id="content">
+
+<p><strong>Is AI here to stay? Or will it just be a phase that will pop?</strong></p>
+
+<p>This is the question we ask every day regarding AI. There is a strong impact that it’s taking on our world, from governments working with companies like OpenAI to the rapid increase in workplace usage.</p>
+
+<p>However, AI is also negatively impacting education. A study by HEPI showed student AI usage jumping from 66% in 2025 to 92% in 2026. This is alarming, considering these students are the future.</p>
+
+<img src="https://picsum.photos/600/300">
+
+<p>Students are increasingly using AI to complete work quickly, missing vital learning and bypassing the academic system.</p>
+
+<p>Another major issue is the rising cost of computers. AI data centres are consuming RAM, pushing manufacturers away from consumer hardware.</p>
+
+<h3>RAM Price Increase</h3>
+
+<p>Prices for RAM have surged dramatically in recent months.</p>
+
+<canvas id="ramChart"></canvas>
+
+<p>Despite negatives, AI also brings benefits. It automates repetitive and undesirable jobs.</p>
+
+<img src="https://picsum.photos/601/300">
+
+<p>AI allows workers to focus on meaningful tasks and spend more time with family.</p>
+
+<p><strong>AI is here to stay, and it will continue shaping the world.</strong></p>
+
+</main>
+
+<script>
+let textSize = 16;
+
+function changeTextSize(change) {
+  textSize += change;
+  document.getElementById("content").style.fontSize = textSize + "px";
+}
+
+// Chart based on your image
+const ctx = document.getElementById('ramChart');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: [
+      "Oct 2024","Nov 2024","Dec 2024","Jan 2025","Feb 2025","Mar 2025",
+      "Apr 2025","May 2025","Jun 2025","Jul 2025","Aug 2025","Sep 2025",
+      "Oct 2025","Nov 2025","Dec 2025","Jan 2026","Feb 2026","Mar 2026"
+    ],
+    datasets: [{
+      label: "Average RAM Price (AUD)",
+      data: [
+        150,130,125,120,120,122,
+        125,130,160,170,175,178,
+        180,260,330,420,480,510
+      ],
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      tooltip: {
+        enabled: true
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
